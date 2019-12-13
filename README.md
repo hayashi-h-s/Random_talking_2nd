@@ -20,15 +20,15 @@ Herokuでデプロイ予定です。
  
 # 実装予定の機能一覧、使用gemなど
  
-・フォルダ投稿機能(CRUD)
-・投稿したフォルダをの内容をランダムで表示する機能
+* フォルダ投稿機能(CRUD)
+* 投稿したフォルダをの内容をランダムで表示する機能
 
 
 # 使用技術
  
-・Ruby  2.6.5
-・Rubu on Rails 6.0.1
-・PostgreSQL 11.4
-・Sass,Bootstrap
-・GitHub,Git
+* Ruby  2.6.5
+* Rubu on Rails 6.0.1
+* PostgreSQL 11.4
+* Sass,Bootstrap
+* GitHub,Git
 
