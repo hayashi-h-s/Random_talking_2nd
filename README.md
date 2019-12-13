@@ -1,24 +1,34 @@
 # README
+ 
+ 
+# Randome_Talking
+ 
+ランダムで話題を提供してくれるアプリです。
+呑み会や合コンなどで、使えます。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# ワイヤーフレーム
 
-Things you may want to cover:
+自分用のメモとして、作りましたので、わかりにくいところがあるかと思いますが、ご了承ください。
 
-* Ruby version
+Moqupsで作成
+https://app.moqups.com/GJmUP4y8xs/view/page/ab69e1c5f
+ 
+# 本番環境
+ 
+まだデプロイしていません。
+Herokuでデプロイ予定です。
+ 
+# 実装予定の機能一覧、使用gemなど
+ 
+・フォルダ投稿機能(CRUD)
+・投稿したフォルダをの内容をランダムで表示する機能
 
-* System dependencies
 
-* Configuration
+# 使用技術
+ 
+・Ruby  2.6.5
+・Rubu on Rails 6.0.1
+・PostgreSQL 11.4
+・Sass,Bootstrap
+・GitHub,Git
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
