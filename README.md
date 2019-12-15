@@ -8,15 +8,17 @@
 
 # ワイヤーフレーム
 
-自分用のメモとして作りましたので、わかりにくいところがあるかと思いますが、ご了承ください。
+自分用のメモとして作りましたので、わかりにくいところがあるかと思いますが、ご了承ください。  
 
-Moqupsで作成
+Moqupsで作成  
 https://app.moqups.com/GJmUP4y8xs/view/page/ab69e1c5f
  
 # 本番環境
  
-Herokuでデプロイ
-https://random-talking.herokuapp.com/
+Herokuでデプロイ  
+https://random-talking.herokuapp.com/  
+  
+随時更新します。
  
 # 実装予定の機能一覧、使用gemなど
  
