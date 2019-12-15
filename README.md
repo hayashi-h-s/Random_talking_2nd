@@ -15,8 +15,8 @@ https://app.moqups.com/GJmUP4y8xs/view/page/ab69e1c5f
  
 # 本番環境
  
-まだデプロイしていません。
-Herokuでデプロイ予定です。
+Herokuでデプロイ
+https://random-talking.herokuapp.com/
  
 # 実装予定の機能一覧、使用gemなど
  
