@@ -79,7 +79,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+
   <<: *default
-  database: random_talking_production
-  username: random_talking
-  password: <%= ENV['RANDOM_TALKING_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
