@@ -1,2 +1,9 @@
 <h1>Folders#new</h1>
-<p>Find me in app/views/folders/new.html.erb</p>
+
+
+<%= form_with model:@folder,local: true do |f| %>
+  <%= f.label :folder_name, "フォルダ名" %>
+  <%= f.text_field :folder_name  %>
+  <%= f.submit "フォルダ投稿" %>
+<% end %>
+
