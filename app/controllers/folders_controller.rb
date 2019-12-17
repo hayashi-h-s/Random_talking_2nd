@@ -1,6 +1,6 @@
 class FoldersController < ApplicationController
   def index
-    @folder = Folder.all
+    @folders = Folder.all
   end
 
   def new
@@ -9,18 +9,21 @@ class FoldersController < ApplicationController
 
   def create
     @folder = Folder.new(folder_params)
+    @folder.save
+    redirect_to folders_path
   end
 
   def edit
   end
 
   def show
+    @folder = Folder.find(params[:id])
   end
 
   private
 
     def folder_params
-      params.reqire(:folder).permit(:folder_name)
+      params.require(:folder).permit(:title)
     end
 
 end

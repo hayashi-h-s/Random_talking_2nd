@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_050842) do
   enable_extension "plpgsql"
 
   create_table "folders", force: :cascade do |t|
-    t.string "folder_name"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
