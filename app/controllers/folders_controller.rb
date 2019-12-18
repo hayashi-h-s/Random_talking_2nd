@@ -10,13 +10,13 @@ class FoldersController < ApplicationController
   def create
     @folder = Folder.new(folder_params)
     @folder.save
-    redirect_to folders_path
+    redirect_to folders_path, notice: "フォルダを投稿しました"
   end
 
   def destroy
     @folder = Folder.find(params[:id])
     @folder.destroy
-    redirect_to folders_path
+    redirect_to folders_path, notice: "削除しました"
   end
 
   def edit

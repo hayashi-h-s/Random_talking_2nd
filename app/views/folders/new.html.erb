@@ -3,6 +3,6 @@
 
 <%= form_with model:@folder,local:true do |f| %>
   <%= f.label :フォルダ名 %>
-  <%= f.text_area :title %>
+  <%= f.text_field :title %>
   <%= f.submit "フォルダ投稿" %>
 <% end %>
