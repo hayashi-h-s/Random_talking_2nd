@@ -1,5 +1,0 @@
-<%= form_with model:@post,local:true do |f| %>
-    <%= f.label :投稿内容 %>
-    <%= f.text_area :content%>
-    <%= f.submit "投稿"%>
-<% end %>
