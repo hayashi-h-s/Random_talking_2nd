@@ -3,11 +3,6 @@ folder
 
 
 
-
-
-
-
-
 ！folder.titleとpost.contentを同時に送る===================================
 
 accepts_nested_attributes_forを使わず、複数の子レコードを保存する
@@ -15,6 +10,8 @@ https://moneyforward.com/engineers_blog/2018/12/15/formobject/
 
 Railsで複数モデルを扱うフォームをすっきり書く（Formオブジェクト）
 https://tech.libinc.co.jp/entry/2019/04/05/113000
+
+　・number_field
 
 ActiveModel::Attributes が最高すぎるんだよな。
 https://qiita.com/alpaca_taichou/items/bebace92f06af3f32898

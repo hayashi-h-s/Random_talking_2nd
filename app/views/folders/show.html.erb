@@ -2,5 +2,25 @@
 <p>Find me in app/views/folders/show.html.erb</p>
 
 <%= @folder.id %>
+<%= @folder.created_at %>
 <%= @folder.title %>
 <%= link_to "フォルダ削除",@folder,method: :delete %>
+
+<hr>
+
+<%= form_with model:@post,local:true do |f| %>
+  <%= f.label :トークテーマを入力してね！ %>
+  <%= f.text_field :content %>
+  <%= f.submit "投稿" %>
+<% end %>
+
+<hr>
+
+<h1>トークテーマ一覧</h1>
+
+<% @posts.each do |post| %>
+  <%= post.id %>
+  <%= post.content %>
+  <%= link_to "削除",post,method: :delete %>
+  <hr>
+<% end %>

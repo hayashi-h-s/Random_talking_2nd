@@ -16,7 +16,7 @@ class FoldersController < ApplicationController
   def destroy
     @folder = Folder.find(params[:id])
     @folder.destroy
-    redirect_to folders_path, notice: "削除しました"
+    redirect_to folders_path, notice: "フォルダを削除しました"
   end
 
   def edit
@@ -24,6 +24,8 @@ class FoldersController < ApplicationController
 
   def show
     @folder = Folder.find(params[:id])
+    @post = Post.new
+    @posts = Post.all
   end
 
   private

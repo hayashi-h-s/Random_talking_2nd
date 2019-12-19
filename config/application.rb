@@ -15,5 +15,11 @@ module RandomTalking
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.generators do |g|
+      g.stylesheets false #=> create app/assets/stylesheets/records.scss
+      g.javascripts false #=>create app/assets/javascripts/records.coffee
+      g.helper false #=>create test/controllers/records_controller_test.rb
+      g.template_engine false #=>create app/views/records
+    end
   end
 end

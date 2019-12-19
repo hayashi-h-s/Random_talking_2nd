@@ -13,6 +13,7 @@
     <%= render 'layouts/header' %>
     <% if flash.notice.present? %>
       <%= flash.notice %>
+      <hr>
     <% end %>
     <%= yield %>
   </body>
