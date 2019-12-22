@@ -8,7 +8,7 @@
 
 <hr>
 
-<%= form_with model:@post,local:true do |f| %>
+<%= form_with model: [@folder, @folder.posts.build],local:true do |f| %>
   <%= f.label :トークテーマを入力してね！ %>
   <%= f.text_field :content %>
   <%= f.submit "投稿" %>
@@ -18,9 +18,10 @@
 
 <h1>トークテーマ一覧</h1>
 
-<% @posts.each do |post| %>
+<hr>
+
+<% @posts.each do |post|%>
   <%= post.id %>
   <%= post.content %>
-  <%= link_to "削除",post,method: :delete %>
   <hr>
 <% end %>

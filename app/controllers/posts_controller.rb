@@ -1,16 +1,19 @@
 class PostsController < ApplicationController
 
   def create
-    @post = Post.new(post_params)
+    @folder = Folder.find(params[:folder_id])
+    @post = @folder.posts.build(post_params)
     @post.save
-    redirect_back fallback_location: root_path
+    redirect_to folder_path(@folder)
   end
 
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_back fallback_location: root_path, notice: "トークテーマを削除しました"
-  end
+#後で実装
+  # def destroy
+  #   @folder = Folder.find(params[:folder_id])
+  #   @post = @folder.posts.find(params[:id])
+  #   @post.destroy
+  #   redirect_back fallback_location: root_path, notice: "トークテーマを削除しました"
+  # end
 
   private
 

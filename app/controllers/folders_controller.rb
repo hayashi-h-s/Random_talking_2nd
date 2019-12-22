@@ -24,8 +24,7 @@ class FoldersController < ApplicationController
 
   def show
     @folder = Folder.find(params[:id])
-    @post = Post.new
-    @posts = Post.all
+    @posts = @folder.posts.all
   end
 
   private
