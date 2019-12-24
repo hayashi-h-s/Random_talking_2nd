@@ -7,6 +7,11 @@
 <%= link_to "フォルダ削除",@folder,method: :delete %>
 
 <hr>
+  <h2>ランダム表示</h2>
+  <% @random.each do |post| %>
+    <%= post.content %>
+  <% end %>
+<hr>
 
 <%= form_with model: [@folder, @folder.posts.build],local:true do |f| %>
   <%= f.label :トークテーマを入力してね！ %>

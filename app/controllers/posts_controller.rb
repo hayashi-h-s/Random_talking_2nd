@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   def create
     @folder = Folder.find(params[:folder_id])
     @post = @folder.posts.build(post_params)
-    @post.save
+    @post.savem
     redirect_to folder_path(@folder)
   end
 
