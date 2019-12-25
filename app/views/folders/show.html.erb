@@ -1,16 +1,28 @@
-<h1>Folders#show</h1>
-<p>Find me in app/views/folders/show.html.erb</p>
+<h1>フォルダ内容</h1>
 
 <%= @folder.id %>
+<hr>
 <%= @folder.created_at %>
+<hr>
 <%= @folder.title %>
+<hr>
 <%= link_to "フォルダ削除",@folder,method: :delete %>
 
 <hr>
-  <h2>ランダム表示</h2>
+  <div class="text-center">
+    <button type="button" class="btn btn-outline-danger"><%= link_to "再読み込みボタン",folder_path %></button>
+  </div>
+<hr>
+
+<div class="card text-center mx-auto" style="width: 40em;">
+  <div class="card-body">
+  <h5 class="card-title">ランダムに表示↓</h5>
   <% @random.each do |post| %>
-    <%= post.content %>
+    <h1 class="card-text"><%= post.content %></h1>
   <% end %>
+  </div>
+</div>
+
 <hr>
 
 <%= form_with model: [@folder, @folder.posts.build],local:true do |f| %>
