@@ -1,12 +1,4 @@
-<h1>フォルダ内容</h1>
-
-<%= @folder.id %>
-<hr>
-<%= @folder.created_at %>
-<hr>
-<%= @folder.title %>
-<hr>
-<%= link_to "フォルダ削除",@folder,method: :delete %>
+<h1 class="text-center"><%= @folder.title %></h1>
 
 <hr>
   <div class="text-center">
@@ -22,6 +14,12 @@
   <% end %>
   </div>
 </div>
+
+<%= @folder.id %>
+<hr>
+<%= @folder.created_at %>
+<hr>
+<%= link_to "フォルダ削除",@folder,method: :delete %>
 
 <hr>
 
