@@ -1,8 +1,11 @@
+
+<div class="mx-auto text-center">
+
 <h1 class="text-center"><%= @folder.title %></h1>
 
 <hr>
   <div class="text-center">
-    <button type="button" class="btn btn-outline-danger"><%= link_to "再読み込みボタン",folder_path %></button>
+    <button type="button" class="btn btn-outline-danger"><%= link_to "ランダム表示ボタン",folder_path %></button>
   </div>
 <hr>
 
@@ -15,28 +18,24 @@
   </div>
 </div>
 
-<%= @folder.id %>
-<hr>
-<%= @folder.created_at %>
-<hr>
 <%= link_to "フォルダ削除",@folder,method: :delete %>
 
 <hr>
 
 <%= form_with model: [@folder, @folder.posts.build],local:true do |f| %>
-  <%= f.label :トークテーマを入力してね！ %>
   <%= f.text_field :content %>
   <%= f.submit "投稿" %>
 <% end %>
 
 <hr>
 
-<h1>トークテーマ一覧</h1>
+<h1>一覧</h1>
 
 <hr>
 
 <% @posts.each do |post|%>
-  <%= post.id %>
   <%= post.content %>
   <hr>
 <% end %>
+
+</div>
