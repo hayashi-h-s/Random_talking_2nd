@@ -11,14 +11,11 @@
 
 <div class="card text-center mx-auto w-75">
   <div class="card-body">
-  <h5 class="card-title">ランダムに表示↓</h5>
   <% @random.each do |post| %>
     <h1 class="card-text"><%= post.content %></h1>
   <% end %>
   </div>
 </div>
-
-<%= link_to "フォルダ削除",@folder,method: :delete %>
 
 <hr>
 
