@@ -1,9 +1,4 @@
-<h1>Folders#index</h1>
-<p>Find me in app/views/folders/index.html.erb</p>
-
-<h1>folder一覧</h1>
 <% @folders.each do |folder| %>
-  <%= folder.id %>
   <%= link_to folder.title,folder_path(folder) %>
   <%= link_to "フォルダ削除",folder,method: :delete %>
   <hr>
