@@ -16,10 +16,19 @@
 
  @import "bootstrap";
 
- .header-logo{
+.header-logo{
   font-family:'Impact';
- }
+}
 
-  .color{
-    color:#000000;
-  }
+a{
+  color:#000000;
+  display:inline-block;
+}
+
+li{
+  list-style:none;
+}
+
+.index-right{
+  float:right;
+}
