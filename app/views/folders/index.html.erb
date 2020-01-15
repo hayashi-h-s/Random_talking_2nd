@@ -3,7 +3,8 @@
     <div class="card-body">
       <%= link_to folder.title,folder_path(folder),class: "card-title"%>
       <div class="float-right">
-        <%= link_to "内容一覧",folder_path(folder),class: "btn btn-info" %>
+        <%= link_to "テーマの投稿",new_folder_post_path(folder),class: "btn btn-primary" %>
+        <%= link_to "テーマ一覧",folder_path(folder),class: "btn btn-info" %>
         <%= link_to "フォルダ削除",folder,method: :delete,class: "btn btn-danger" %>
       </div>
     </div>

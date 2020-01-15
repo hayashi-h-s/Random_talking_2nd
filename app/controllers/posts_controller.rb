@@ -7,6 +7,11 @@ class PostsController < ApplicationController
     redirect_to folder_path(@folder)
   end
 
+  def new
+    @folder = Folder.find(params[:folder_id])
+    @post = @folder.posts.new
+  end
+
 #後で実装
   # def destroy
   #   @folder = Folder.find(params[:folder_id])
