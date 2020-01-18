@@ -4,7 +4,8 @@ class PostsController < ApplicationController
     @folder = Folder.find(params[:folder_id])
     @post = @folder.posts.build(post_params)
     @post.save
-    redirect_to folder_path(@folder)
+    redirect_back(fallback_location: new_folder_post_path)
+    flash[:notice] = "「#{@post.content}」を投稿しました"
   end
 
   def new
