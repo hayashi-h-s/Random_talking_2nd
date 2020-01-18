@@ -1,3 +1,11 @@
-posts/new
-
-<%= @folder.id %>
+<div class="jumbotron">
+  <h1 class="display-4">トークテーマを決めよう！</h1>
+  <p  class="lead">ランダムに表示したいトークテーマを投稿する。</p>
+    <%= form_with model:[@folder, @folder.posts.build],local:true,class: "form-inline" do |f| %>
+      <%= f.text_field :content,placeholder: "トークテーマを入力",class: "form-control w-75" %>
+      <%= f.submit "投稿",class: "btn btn-primary submit-btn" %>
+    <% end %>
+    <div class="text-center">
+    <%= link_to "ゲーム開始！",folder_path(@folder), class:"btn btn-info btn-lg game-btn" %>
+    </div>
+</div>
