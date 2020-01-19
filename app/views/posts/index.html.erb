@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+  <div class="card mx-auto" style="width: 90%;">
+    <div class="card-body">
+      <span class="card-title"><%= post.content %></span>
+      <div class="float-right">
+        <%= link_to "編集",folders_path,class: "btn btn-primary" %> 
+      </div>
+    </div>
+  </div>
+<% end %>

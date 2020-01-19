@@ -1,16 +1,21 @@
 class PostsController < ApplicationController
 
+  def index
+    @folder = Folder.find(params[:folder_id])
+    @posts = @folder.posts.all
+  end
+
+  def new
+    @folder = Folder.find(params[:folder_id])
+    @post = @folder.posts.new
+  end
+
   def create
     @folder = Folder.find(params[:folder_id])
     @post = @folder.posts.build(post_params)
     @post.save
     redirect_back(fallback_location: new_folder_post_path)
     flash[:notice] = "「#{@post.content}」を投稿しました"
-  end
-
-  def new
-    @folder = Folder.find(params[:folder_id])
-    @post = @folder.posts.new
   end
 
 #後で実装
