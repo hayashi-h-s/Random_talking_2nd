@@ -1,13 +1,13 @@
 <% @folders.each do |folder| %>
   <div class="card mx-auto" style="width: 90%;">
     <div class="card-body">
-      <%= link_to folder.title,folder_path(folder),class: "card-title"%>
+      <span class="card-title"><%= folder.title %></span>
       <div class="float-right">
+        <%= link_to "ゲーム開始",folder_path(folder),class: "btn btn-info" %>      
+        <%= link_to "テーマ一覧",folder_posts_path(folder),class: "btn btn-success" %>        
         <%= link_to "テーマの投稿",new_folder_post_path(folder),class: "btn btn-primary" %>
-        <%= link_to "テーマ一覧",folder_posts_path(folder),class: "btn btn-info" %>
         <%#="後で追加する" link_to "フォルダ削除",folder,method: :delete,class: "btn btn-danger" %>
       </div>
     </div>
   </div>
 <% end %>
-
