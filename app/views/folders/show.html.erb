@@ -1,11 +1,6 @@
 
 <div class="mx-auto text-center">
   <hr>
-    <div class="text-center">
-      <button type="button" class="btn btn-outline-danger"><%= link_to "ランダム表示ボタン",folder_path %></button>
-    </div>
-  <hr>
-
   <div class="card text-center mx-auto w-75">
     <div class="card-body">
     <% @random.each do |post| %>
@@ -14,12 +9,36 @@
     </div>
   </div>
   <hr>
-<div class="jumbotron">
-  <%= form_with model: [@folder, @folder.posts.build],class: "form-inline" ,local:true do |f| %>
-    <%= f.text_field :content,class: "form-control w-75" %>
-    <%= f.submit "テーマを追加",class: "btn btn-primary"%>
-  <% end %>
+    <div class="text-center">
+      <%= link_to "次のトピックへ",folder_path,class:"btn btn-info w-75" %>
+    </div>
+  <hr>
+    <%= form_with model: [@folder, @folder.posts.build],local:true do |f| %>
+        <%= f.text_field :content,class: "w-75",placeholder: "トピックを追加する" %>
+      <hr>
+      <%= f.submit "トピック追加",class: "btn btn-primary w-75" %>
+    <% end %>
 </div>
+
+<% 
+=begin
+%>
+
+コメントアウトしてる場所
+
+  <div class="jumbotron">
+    <%= form_with model: [@folder, @folder.posts.build],local:true do |f| %>
+      <%= f.text_field :content,class: "form-control w-75" %>
+      <%= f.submit "トピック追加",class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+<%
+=end
+%>
+
+
+
 
 
 
