@@ -15,11 +15,15 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  ncoding: utf8
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: <%= ENV['DATABASE_DEV_NAME'] %>
+  pool: 5
+  username: <%= ENV['DATABASE_DEV_USER'] %>
+  password: <%= ENV['DATABASE_DEV_PASSWORD'] %>
+  host: <%= ENV['DATABASE_DEV_HOST'] %>
 
 development:
   <<: *default
@@ -29,7 +33,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: random_talking
+  #username: rdbs
 
   # The password associated with the postgres role (username).
   #password:
@@ -79,8 +83,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  database: random_talking_production
+  username: root
+  password: <%= ENV['RDBS_DATABASE_PASSWORD'] %>
