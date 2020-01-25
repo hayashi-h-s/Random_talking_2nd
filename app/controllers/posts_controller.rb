@@ -2,8 +2,10 @@ class PostsController < ApplicationController
 
   def index
     @folder = Folder.find(params[:folder_id])
-    @posts = @folder.posts.all.order("RANDOM()").limit(10)
+    @posts = @folder.posts.all.order("RAND()").limit(1000)
   end
+
+
 
   def new
     @folder = Folder.find(params[:folder_id])
