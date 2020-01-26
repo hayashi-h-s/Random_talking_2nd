@@ -1,3 +1,13 @@
+フォルダ名:<%= @folder.title %>
+
+<%= form_with model:[@folder, @folder.posts.build],local:true,class: "form-inline" do |f| %>
+  <%= f.text_field:content,placeholder: "トピックを入力",class: "form-control w-75" %>
+  <%= f.submit "投稿",class: "btn btn-primary submit-btn" %>
+<% end %>
+
+<%= link_to "ゲーム開始！",folder_path(@folder), class:"btn btn-info btn-lg game-btn" %>
+</div>
+
 <% @posts.each do |post| %>
   <div class="card mx-auto" style="width: 90%;">
     <div class="card-body">
