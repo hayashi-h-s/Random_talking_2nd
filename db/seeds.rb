@@ -33,7 +33,7 @@
 
 @posts2 = @folder2.posts.create(content: "有名人で誰が好き？")
           @folder2.posts.create(content: "好きな歌手について語ってください")
-          @folder2.posts.create(content: "キュンとする異性の仕草は？")          
+          @folder2.posts.create(content: "キュンとする異性の仕草は？")
           @folder2.posts.create(content: "どこからが浮気？")          
           @folder2.posts.create(content: "好きな映画とその理由は？")
           @folder2.posts.create(content: "好きな漫画はその理由は？")
