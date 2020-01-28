@@ -25,6 +25,11 @@ a{
   display:inline-block;
 }
 
+a:hover {
+text-decoration: none;
+}
+
+
 li{
   list-style:none;
 }
@@ -49,5 +54,5 @@ li{
 
 
 .fas{
-  color:#005FFF;
+  color:	#005FFF;
 }
