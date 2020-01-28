@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h2 class="folder-title" >⭐︎<%= @folder.title %></h2>
+  <h2 class="folder-title" ><i class="fas fa-folder"></i><%= @folder.title %></h2>
   <h1 class="display-4">トピックを決めよう！</h1>
   <p  class="lead">ランダムに表示したいトピックを投稿する。</p>
     <%= form_with model:[@folder, @folder.posts.build],local:true,class: "form-inline" do |f| %>
