@@ -11,7 +11,7 @@ class FoldersController < ApplicationController
   def create
     @folder = Folder.new(folder_params)
     @folder.save
-    redirect_to new_folder_post_path(@folder), notice: "フォルダを投稿しました"
+    redirect_to new_folder_post_path(@folder), notice: "「#{@folder.title}」を投稿しました"
   end
 
   def destroy
