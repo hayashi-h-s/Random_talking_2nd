@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root to: 'home#top'
+  root to: 'folders#index'
 
   resources :folders do
     resources :posts
