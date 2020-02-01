@@ -1,3 +1,13 @@
+# <% if @folder.errors.any? %>
+#   <div class="alert alert-danger">
+#     <ul>
+#       <% @folder.errors.full_messages.each do |message| %>
+#         <li><%= message %></li>
+#       <% end %>
+#     </ul>
+#   </div>
+# <% end %>
+
 <div class="jumbotron">
   <h1 class="display-4">フォルダ名を決めよう！</h1>
   <p  class="lead">テーマに合わせたフォルダ名をつける。</p>

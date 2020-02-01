@@ -11,12 +11,12 @@
   </head>
 
   <body>
-    <%= render 'layouts/header'%> 
+    <%= render 'layouts/header'%>
     <% if flash.notice.present? %>
       <li class="alert alert-success"><%= flash.notice %></li>
-    <% end %>    
+    <% end %>
     <div class="container">
       <%= yield %>
-    </div>  
+    </div>
   </body>
 </html>

@@ -1,3 +1,13 @@
+# <% if @post.errors.any? %>
+#   <div class="alert alert-danger">
+#     <ul>
+#       <% @post.errors.full_messages.each do |message| %>
+#         <li><%= message %></li>
+#       <% end %>
+#     </ul>
+#   </div>
+# <% end %>
+
 <div class="jumbotron">
   <h2 class="folder-title" ></h2>
   <h1 class="display-4 ">「<%= @folder.title %>」にトピックを投稿しよう！</h1>
