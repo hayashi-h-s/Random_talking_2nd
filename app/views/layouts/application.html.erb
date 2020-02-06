@@ -15,11 +15,12 @@
     <% if flash.notice.present? %>
       <li class="alert alert-success"><%= flash.notice %></li>
     <% end %>
-    <% unless current_page?(root_path) %>
+    <% if current_page?(root_path) %>
+      <%= render 'layouts/top'%> 
+    <% else %>
       <div class="container">
         <%= yield %>
-      </div>
+      </div> 
     <% end %>
-    <%= render 'layouts/top'%>
   </body>
 </html>
