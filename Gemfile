@@ -62,4 +62,4 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 
 gem 'dotenv-rails'
-
+gem 'pry-rails'

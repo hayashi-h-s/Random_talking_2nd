@@ -1,0 +1,11 @@
+
+<%= @notice %>
+
+<div class="jumbotron">
+  <h1 class="display-4">ログイン</h1>
+    <%= form_with url:("/login"),local:true,class: "form-inline" do |f| %>
+      <%= f.text_field :email,placeholder: "emailを入力",class: "form-control w-75" %>
+      <%= f.text_field :password,placeholder: "passwordを入力",class: "form-control w-75" %>
+      <%= f.submit "ログイン",class: "btn btn-primary submit-btn" %>
+    <% end %>
+</div>
