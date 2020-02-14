@@ -10,10 +10,26 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to folders_path, notice: "「#{@user.name}」でユーザー登録しました"
+    
+    # @user.save
+    # log_in @user
+    # redirect_to @user, notice: "「#{@user.name}」でユーザー登録しました"
+
+    if @user.save
+      log_in @user
+      redirect_to @user, notice: "「#{@user.name}」でユーザー登録しました"
+    else
+      redirect_to users_new_path, notice: "未入力があります"
+      #後に変更
+    end   
   end
 
+    # if @user.save
+    #   log_in @user
+    #   redirect_to @user, notice: "「#{@user.name}」でユーザー登録しました"
+    # else
+    #   render 'new'
+    # end
   private
 
     def user_params
