@@ -10,7 +10,7 @@
 
 <div class="jumbotron">
   <h2 class="folder-title" ></h2>
-  <h1 class="display-4 ">「<%= @folder.title %>」にトピックを投稿しよう！</h1>
+  <h1 class="display-4 ">フォルダにトピックを投稿しよう！</h1>
   <p  class="lead">ランダムに表示したいトピックを投稿する。</p>
     <%= form_with model:[@folder, @folder.posts.build],local:true,class: "form-inline" do |f| %>
       <%= f.text_field:content,placeholder: "トピックを入力",class: "form-control w-75" %>
