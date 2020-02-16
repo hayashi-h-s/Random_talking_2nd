@@ -1,7 +1,10 @@
 
 ユーザーid ：<%= @notice %>
 <hr>
-ユーザー名:<%#= current_user.name %>
+<% if current_user %> 
+  ユーザー名:<%= current_user.name %>
+<% end %>
+
 
 <div class="jumbotron">
   <h1 class="display-4">ログイン</h1>
