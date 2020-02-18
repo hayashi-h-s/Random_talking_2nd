@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       log_in @user
       redirect_to @user, notice: "「#{@user.name}」でユーザー登録しました"
     else
-      redirect_to users_new_path, notice: "未入力があります"
+      render "new"
       #後に変更
     end   
   end

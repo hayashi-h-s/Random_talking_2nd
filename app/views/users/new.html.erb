@@ -1,6 +1,8 @@
+
 <div class="jumbotron">
   <h1 class="display-4">ユーザー新規登録</h1>
     <%= form_with model:@user,local:true,class: "form-inline" do |f| %>
+      <%= render "shared/error_messages" %>
       <%= f.text_field :name,placeholder: "名前を入力",class: "form-control w-75" %>
       <%= f.text_field :email,placeholder: "emailを入力",class: "form-control w-75" %>
       <%= f.text_field :password,placeholder: "passwordを入力",class: "form-control w-75" %>

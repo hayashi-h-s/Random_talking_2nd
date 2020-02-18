@@ -14,14 +14,14 @@ class SessionsController < ApplicationController
       redirect_to login_path, notice: "ログインしました。"
     else
       session[:user_id] = nil
-      redirect_to login_path, notice: "ログイン失敗"
+      redirect_to login_path, notice: "ログイン失敗。"
     end
 
   end
 
   def destroy
     log_out
-    redirect_to root_path
+    redirect_to login_path,notice: "ログアウトしました。"
   end    
 
   private
