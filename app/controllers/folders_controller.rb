@@ -9,7 +9,7 @@ class FoldersController < ApplicationController
   end
 
   def create
-    @folder = Folder.new(folder_params)
+    @folder = current_user.folders.build(folder_params)
     if @folder.save
       redirect_to new_folder_post_path(@folder), notice: "「#{@folder.title}」を投稿しました"
     else
