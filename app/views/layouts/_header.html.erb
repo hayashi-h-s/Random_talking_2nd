@@ -1,12 +1,16 @@
 
 
 <header class="navbar navbar-expand-xl navbar-light bg-light">
-  <h1 class="header-logo"><%= link_to "Random_talk(仮)", root_path %></h1>
+  <h1 class="header-logo"><%= link_to "トピつく。", root_path %></h1>
   <div class="float-right">
-    <%= link_to "", folders_path,class: "fas fa-list fa-border fa-3x" %>
-    <%= link_to "", new_folder_path,class: "fas fa-folder-plus fa-border fa-3x" %>
-    <%= link_to "新規ユーザー登録", new_user_path %>
-    <%= link_to "ログイン", login_path %>
-    <%= link_to "ログアウト", logout_path, method: :delete %>
+    <% if logged_in? %>
+      <%= link_to "",user_path(current_user),class:"fas fa-user fa-border fa-3x" %>    
+      <%= link_to "", folders_path,class: "fas fa-list fa-border fa-3x" %>
+      <%= link_to "", new_folder_path,class: "fas fa-folder-plus fa-border fa-3x" %>
+      <%= link_to "", logout_path, method: :delete,class:"fas fa-sign-out-alt fa-border fa-3x"  %>
+    <% else %>
+      <%= link_to "", new_user_path,class:"fas fa-user-plus fa-border fa-3x" %>
+      <%= link_to "", login_path,class:"fas fa-sign-in-alt fa-border fa-3x" %>
+    <% end %>
   </div>
 </header>
