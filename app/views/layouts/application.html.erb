@@ -12,9 +12,11 @@
 
   <body>
     <%= render 'layouts/header'%>
-    <% if flash.notice.present? %>
-      <li class="alert alert-success"><%= flash.notice %></li>
-    <% end %>
+    <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>">
+          <%= message %>
+        </div>
+    <% end %>    
     <% if current_page?(root_path) %>
       <%= render 'layouts/top'%> 
     <% else %>

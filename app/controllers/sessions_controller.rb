@@ -11,10 +11,12 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to login_path, notice: "ログインしました。"
+      redirect_to folders_path, notice: "ログインしました。"
     else
-      session[:user_id] = nil
-      redirect_to login_path, notice: "ログイン失敗。"
+      # flash[:success] = "無効なメール/パスワードの組み合わせ"
+      # flash[:success] = "無効なメール/パスワードの組み合わせ"
+      flash.now[:danger] = 'メールアドレスまたはパスワードが違います。'
+      render 'new'
     end
 
   end

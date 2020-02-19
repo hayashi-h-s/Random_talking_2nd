@@ -14,10 +14,15 @@ class PostsController < ApplicationController
   def create
     @folder = Folder.find(params[:folder_id])
     @post = @folder.posts.build(post_params)
-    @post.save
-    redirect_back(fallback_location: new_folder_post_path)
-    flash[:notice] = "「#{@post.content}」を投稿しました"
+    if @post.save
+      redirect_back(fallback_location: new_folder_post_path)
+      flash[:notice] = "「#{@post.content}」を投稿しました"
+    else
+      render "new"
+    end
   end
+
+  
 
 #後で実装
   # def destroy

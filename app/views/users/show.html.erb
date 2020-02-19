@@ -2,4 +2,23 @@
 ユーザーshow
 
 <hr>
-ユーザー名：<%= @user.name %>
+ユーザー名：<%= @user.name %> 
+
+<hr>
+
+<% @folders.each do |folder| %>
+  <div class="card mx-auto" style="width: 90%;">
+    <div class="card-body">
+      <span class="card-title">ユーザー名:<%= folder.user.name %></span>
+      <hr>
+      <span class="card-title"><%= folder.title %></span>
+      <div class="float-right">
+        <%= link_to "",folder_path(folder),class: "fas fa-gamepad fa-border fa-2x" %>
+        <%= link_to "",folder_posts_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>        
+        <%= link_to "",new_folder_post_path(folder),class: "fas fa-plus fa-border fa-2x" %>
+        <%#= link_to "フォルダ削除",folder,method: :delete,class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
