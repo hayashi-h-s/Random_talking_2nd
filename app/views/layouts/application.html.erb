@@ -13,10 +13,10 @@
   <body>
     <%= render 'layouts/header'%>
     <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>">
-          <%= message %>
-        </div>
-    <% end %>    
+      <div class="alert alert-<%= message_type %>">
+        <%= message %>
+      </div>
+    <% end %>
     <% if current_page?(root_path) %>
       <%= render 'layouts/top'%> 
     <% else %>

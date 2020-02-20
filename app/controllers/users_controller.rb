@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       flash[:success] = "「#{@user.name}」でユーザー登録しました"
     else
       render "new"
-    end   
+    end
   end
 
   def edit  
