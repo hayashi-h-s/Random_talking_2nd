@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :destroy]
 
   def new
     @user = User.new
@@ -12,10 +13,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     
-    # @user.save
-    # log_in @user
-    # redirect_to @user, notice: "「#{@user.name}」でユーザー登録しました"
-
     if @user.save
       log_in @user
       redirect_to @user
@@ -25,16 +22,33 @@ class UsersController < ApplicationController
     end   
   end
 
-    # if @user.save
-    #   log_in @user
-    #   redirect_to @user, notice: "「#{@user.name}」でユーザー登録しました"
-    # else
-    #   render 'new'
-    # end
+  def edit  
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    
+    if @user.update_attributes(user_params)
+      redirect_to @user
+      flash[:success] = "「#{@user.name}」でユーザー登録しました"
+    else
+      render "edit"
+    end
+  end
+
   private
 
     def user_params
       params.require(:user).permit(:name, :email, :password,:password_confirmation)
+    end
+
+    # def user_edit_params
+    #   params.require(:user).permit(:name, :email)
+    # end    
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
     end
 
 end
