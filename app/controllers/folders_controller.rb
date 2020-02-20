@@ -31,7 +31,7 @@ class FoldersController < ApplicationController
     @folder = Folder.find(params[:id])
     @posts = @folder.posts.all
     @posts_count = @posts.size
-    @random = @folder.posts.order("RAND()").limit(1)
+    @random = @folder.posts.order("RANDOM()").limit(1)
   end
 
   private
