@@ -18,10 +18,10 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in @user
-      redirect_to @user, notice: "「#{@user.name}」でユーザー登録しました"
+      redirect_to @user
+      flash[:success] = "「#{@user.name}」でユーザー登録しました"
     else
       render "new"
-      #後に変更
     end   
   end
 

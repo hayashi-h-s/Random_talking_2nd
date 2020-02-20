@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to folders_path, notice: "ログインしました。"
+      redirect_to folders_path
+      flash[:success] = "ログインしました。"
     else
       # flash[:success] = "無効なメール/パスワードの組み合わせ"
       # flash[:success] = "無効なメール/パスワードの組み合わせ"
@@ -23,7 +24,8 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    redirect_to login_path,notice: "ログアウトしました。"
+    redirect_to login_path
+    flash[:primary] = "ログアウトしました。"
   end    
 
   private

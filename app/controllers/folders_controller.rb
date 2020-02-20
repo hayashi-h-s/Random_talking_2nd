@@ -11,7 +11,8 @@ class FoldersController < ApplicationController
   def create
     @folder = current_user.folders.build(folder_params)
     if @folder.save
-      redirect_to new_folder_post_path(@folder), notice: "「#{@folder.title}」を投稿しました"
+      redirect_to new_folder_post_path(@folder)
+      flash[:success] = "「#{@folder.title}」を投稿しました"
     else
       render 'new'
     end

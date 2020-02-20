@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @post = @folder.posts.build(post_params)
     if @post.save
       redirect_back(fallback_location: new_folder_post_path)
-      flash[:notice] = "「#{@post.content}」を投稿しました"
+      flash[:success] = "「#{@post.content}」を投稿しました"
     else
       render "new"
     end
