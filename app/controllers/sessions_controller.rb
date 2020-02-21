@@ -7,15 +7,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    
+
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to folders_path
       flash[:success] = "ログインしました。"
     else
-      # flash[:success] = "無効なメール/パスワードの組み合わせ"
-      # flash[:success] = "無効なメール/パスワードの組み合わせ"
       flash.now[:danger] = 'メールアドレスまたはパスワードが違います。'
       render 'new'
     end
