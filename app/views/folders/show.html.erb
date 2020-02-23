@@ -12,29 +12,3 @@
       <%= link_to "次のトピックへ",folder_path,class:"btn btn-info w-90" %>
     </div>
   <hr>
-    <%= form_with model: [@folder, @folder.posts.build],local:true do |f| %>
-        <%= f.text_field :content,class: "w-90",placeholder: "トピックを追加する" %>
-      <hr>
-      <%= f.submit "トピック追加",class: "btn btn-primary w-90" %>
-    <% end %>
-    <hr>
-</div>
-
-<% 
-=begin
-%>
-
-
-
-コメントアウトしてる場所
-
-  <div class="jumbotron">
-    <%= form_with model: [@folder, @folder.posts.build],local:true do |f| %>
-      <%= f.text_field :content,class: "form-control w-75" %>
-      <%= f.submit "トピック追加",class: "btn btn-primary" %>
-    <% end %>
-  </div>
-
-<%
-=end
-%>

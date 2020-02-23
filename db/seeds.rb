@@ -34,7 +34,13 @@
     #   @folder.posts.create(content: elem
     # end
 
-@folder1 = Folder.create(title: "トークテーマ集")
+@user1 = User.create(name:  "Haya",
+                     email: "max9173627@gmail.com",
+                     password:              "haya",
+                     password_confirmation: "haya",
+                     )
+
+@folder1 = @user1.folders.create(title: "トークテーマ集")
 
 posts1 = [
   "有名人で誰が好き？",
