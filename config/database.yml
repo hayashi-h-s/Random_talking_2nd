@@ -85,5 +85,3 @@ test:
 production:
   <<: *default
   database: random_talking_production
-  username: root
-  password: <%= ENV['RDBS_DATABASE_PASSWORD'] %>
