@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   
   get 'sessions/new'
   get 'users/new'
-  root to: 'home#top'
+  root 'home#top'
 
   resources :folders do
-    resources :posts
+    # resources :posts
   end
-
+  
   resources :users
   
   get    'login'   => 'sessions#new'
