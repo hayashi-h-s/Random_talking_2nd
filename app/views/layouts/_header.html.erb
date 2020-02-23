@@ -6,7 +6,7 @@
     <% if logged_in? %>
       <%= link_to "",user_path(current_user),class:"fas fa-user fa-border fa-3x" %>    
       <%= link_to "", folders_path,class: "fas fa-list fa-border fa-3x" %>
-      <%= link_to "", new_folder_path,class: "fas fa-folder-plus fa-border fa-3x" %>
+      <%#= link_to "", new_user_folder_path,class: "fas fa-folder-plus fa-border fa-3x" %>
       <%= link_to "", logout_path, method: :delete,class:"fas fa-sign-out-alt fa-border fa-3x"  %>
     <% else %>
       <%= link_to "", new_user_path,class:"fas fa-user-plus fa-border fa-3x" %>

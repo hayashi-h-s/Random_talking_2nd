@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  
+
+  root 'home#top'
   get 'sessions/new'
   get 'users/new'
-  root 'home#top'
+  get    'folders'   => 'folders#index'
 
-  resources :folders do
-    # resources :posts
-  end
+  resources :users do
+    resources :folders do
+      resources :posts
+    end
+  end 
   
-  resources :users
+  # resources :users
   
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
