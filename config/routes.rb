@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#top'
   get 'sessions/new'
   get 'users/new'
-  get    'folders'   => 'folders#index'
+  get 'folders'   => 'folders#index'
 
   resources :users do
     resources :folders do
