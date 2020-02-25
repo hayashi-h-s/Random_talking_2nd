@@ -1,3 +1,16 @@
+<%= link_to "ユーザー登録", new_user_registration_path %>
+<%= link_to "ログイン", new_user_session_path %>
+<%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
+
+<%= current_user.id %>
+
+<% 
+=begin
+%>
+
+コメントアウトしてる場所
+
+
 
 
 <header class="navbar navbar-expand-xl navbar-light bg-light">
@@ -14,3 +27,7 @@
     <% end %>
   </div>
 </header>
+
+<%
+=end
+%>

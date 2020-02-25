@@ -47,10 +47,10 @@ class UsersController < ApplicationController
     # def user_edit_params
     #   params.require(:user).permit(:name, :email)
     # end    
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to folders_path unless current_user?(@user)
-      flash[:danger] = "ユーザーの編集は、本人しかできません。"
-    end
+    # def correct_user
+    #   @user = User.find(params[:id])
+    #   redirect_to folders_path unless current_user?(@user)
+    #   flash[:danger] = "ユーザーの編集は、本人しかできません。"
+    # end
 
 end
