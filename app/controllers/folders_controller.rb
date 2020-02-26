@@ -20,17 +20,6 @@ class FoldersController < ApplicationController
     end
   end
 
-  #  def create
-  #   @folder = Folder.find(params[:folder_id])
-  #   @post = @folder.posts.build(post_params)
-  #   if @post.save
-  #     redirect_back(fallback_location: new_folder_post_path)
-  #     flash[:success] = "「#{@post.content}」を投稿しました"
-  #   else
-  #     render "new"
-  #   end
-  # end
-
   def destroy
     @folder = Folder.find(params[:id])
     @folder.destroy

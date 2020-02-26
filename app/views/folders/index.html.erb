@@ -3,7 +3,7 @@
 <% @folders.each do |folder| %>
   <div class="card mx-auto" style="width: 90%;">
     <div class="card-body">
-      <span class="card-title">ユーザー名:<%= link_to folder.user.name,user_path(folder.user) %></span>
+      <span class="card-title">ユーザー名:<%#= link_to folder.user.name,user_path(folder.user) %></span>
       <hr>
       <span class="card-title"><%= folder.title %></span>
       <div class="float-right">
