@@ -1,29 +1,27 @@
 
-
-<%= current_user.email  %>
-
 <% 
 =begin
 %>
 
-<%= link_to "",edit_user_path(@user),class:"fas fa-user-edit fa-border fa-3x" %>    
-<hr>
-ユーザーshow
+<%
+=end
+%>
+
+<%#= link_to "",edit_user_path(@user),class:"fas fa-user-edit fa-border fa-3x" %>    
 
 <hr>
-ユーザー名：<%= @user.name %> 
-
+ユーザー名：<%= @user.email %> 
 <hr>
 
 
 <% @folders.each do |folder| %>
   <div class="card mx-auto" style="width: 90%;">
     <div class="card-body">
-      <span class="card-title">ユーザー名:<%= folder.user.name %></span>
+      <span class="card-title">ユーザー名:<%= folder.user.email %></span>
       <hr>
       <span class="card-title"><%= folder.title %></span>
       <div class="float-right">
-        <%= link_to "",user_folder_path(folder),class: "fas fa-gamepad fa-border fa-2x" %>
+        <%#= link_to "",user_folder_path(folder),class: "fas fa-gamepad fa-border fa-2x" %>
         <%#= link_to "",new_user_folder_post_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>      
       </div>
     </div>
@@ -33,7 +31,6 @@
 <% 
 =begin
 %>
-
 
 
 <% @folders.each do |folder| %>
@@ -52,7 +49,8 @@
   </div>
 <% end %>
 
+
+
 <%
 =end
 %>
-

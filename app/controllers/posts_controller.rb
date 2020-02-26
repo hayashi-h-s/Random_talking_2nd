@@ -2,8 +2,8 @@ class PostsController < ApplicationController
   # before_action :logged_in_user, only: [:create, :destroy]
 
   def index
-    # @folder = Folder.find(params[:folder_id])
-    # @posts = @folder.posts.all
+    @folder = Folder.find(params[:folder_id])
+    @posts = @folder.posts.all
     # .order("RAND()").limit(1000) ランダムに表示できる
   end
 
