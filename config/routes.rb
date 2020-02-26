@@ -5,14 +5,16 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   # get 'sessions/new'
   # get 'users/new'
-  # get 'folders'   => 'folders#index'
+  get 'folders'   => 'folders#index'
+  get 'folders/new'   => 'folders#new'
+  # resources :folders
+  resources :users do
+    resources :folders do
+      # resources :posts
+    end
+  end 
+  resources :posts
 
-  # resources :users do
-  #   resources :folders do
-  #     resources :posts
-  #   end
-  # end 
-  
   # # resources :users
   
   # get    'login'   => 'sessions#new'

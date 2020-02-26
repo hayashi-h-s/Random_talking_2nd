@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # has_secure_password
 
-  # has_many :folders
+  has_many :folders
 
   # validates :name, presence: true
   # validates :email, presence: true
