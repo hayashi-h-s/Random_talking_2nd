@@ -1,4 +1,41 @@
 
+
+<% 
+=begin
+%>
+
+コメントアウトしてる場所
+
+
+
+<script>
+    'use strict';
+    const num = 16;
+    const winner = Math.floor(Math.random() * num); // 0 - 4
+
+    for (let i = 0; i < num; i++) {
+      const div = document.createElement('div');
+      // 定数 "div"にdivダグを代入して使用できるようにしている。divタグをを表示している
+      div.classList.add('box');
+      // divタグにclass="box"を追加している
+      div.addEventListener('click', () => {
+        if (i === winner) {
+          div.textContent = 'アウト';
+          div.classList.add('win');
+        } else {
+          div.textContent = 'セーフ!';
+          div.classList.add('lose');
+        }
+      });
+
+      document.body.appendChild(div);
+    }
+</script>
+
+<%
+=end
+%>
+
 <div class="mx-auto text-center">
   <div class="card text-center mx-auto w-90">
     <div class="card-body">
