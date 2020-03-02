@@ -10,14 +10,14 @@
 <%#= link_to "",edit_user_path(@user),class:"fas fa-user-edit fa-border fa-3x" %>    
 
 <hr>
-ユーザー名：<%= @user.email %> 
+ユーザー名：<%= @user.name %> 
 <hr>
 
 
 <% @folders.each do |folder| %>
   <div class="card mx-auto" style="width: 90%;">
     <div class="card-body">
-      <span class="card-title">ユーザー名:<%= folder.user.email %></span>
+      <span class="card-title">ユーザー名:<%= folder.user.name %></span>
       <hr>
       <span class="card-title"><%= folder.title %></span>
       <div class="float-right">
