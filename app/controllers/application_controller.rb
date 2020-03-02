@@ -9,11 +9,18 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def logged_in_user
-      unless user_signed_in?
-        flash[:danger] = "ログインしてください。"
-        redirect_to new_user_session_path
-      end
-    end
+    # def logged_in_user
+    #   unless user_signed_in?
+    #     flash[:danger] = "ログインしてください。"
+    #     redirect_to new_user_session_path
+    #   end
+    # end
+
+    # def current_user?
+    #   if current_user.blank?
+    #     flash[:danger] = "ログインしてください。"
+    #     redirect_to new_user_session_path
+    #   end    
+    # end
 
 end
