@@ -17,14 +17,17 @@
 =end
 %>
 
-
 <% @posts.each do |post| %>
   <div class="card mx-auto" style="width: 90%;">
     <div class="card-body">
       <span class="card-title"><%= post.content %></span>
       <div class="float-right">
-        <%#ユーザー機能を付けたら追加する= link_to "編集",folders_path,class: "btn btn-primary" %> 
+        <%#= link_to "編集",edit_folder_post_path(post),class: "btn btn-primary" %> 
+        <%#= link_to "削除",folder_post_path(post), method: :delete,class: "btn btn-primary" %>
       </div>
     </div>
   </div>
 <% end %>
+
+        <%#= link_to "", folder_path(folder), method: :delete,class:"fas fa-trash-alt fa-border fa-2x"  %>   
+

@@ -7,4 +7,13 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
     end
 
+  private
+
+    def logged_in_user
+      unless user_signed_in?
+        flash[:danger] = "ログインしてください。"
+        redirect_to new_user_session_path
+      end
+    end
+
 end

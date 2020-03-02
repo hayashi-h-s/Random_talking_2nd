@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end 
   # resources :posts
 
-  # # resources :users
+  # # resources :user
   
   # get    'login'   => 'sessions#new'
   # post   'login'   => 'sessions#create'
