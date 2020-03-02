@@ -23,7 +23,8 @@ class FoldersController < ApplicationController
   def destroy
     @folder = Folder.find(params[:id])
     @folder.destroy
-    redirect_to folders_path, notice: "「#{@folder.title}」を削除しました。"
+    flash[:info] = "「#{@folder.title}」を削除しました。"
+    redirect_to user_path(current_user)
   end
 
   def edit
@@ -34,7 +35,7 @@ class FoldersController < ApplicationController
     @posts = @folder.posts.all
     @posts_count = @posts.size
     @random = @folder.posts.order("RAND()").limit(1)
-  end
+  end  
 
   private
 
