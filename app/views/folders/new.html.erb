@@ -1,12 +1,4 @@
-<% if @folder.errors.any? %>
-  <div class="alert alert-danger">
-    <ul>
-      <% @folder.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+
 
 
 
@@ -22,6 +14,17 @@
 <% 
 =begin
 %>
+<% if @folder.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @folder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 
 コメントアウトしてる場所
 

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :logged_in_user, only: [:edit, :destroy]
+  before_action :user_signed_in?, only: [:edit, :destroy]
   # before_action :correct_user,   only: [:edit, :update,:destroy]
 
   def new

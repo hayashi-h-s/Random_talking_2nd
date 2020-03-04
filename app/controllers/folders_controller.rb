@@ -1,8 +1,11 @@
 class FoldersController < ApplicationController
-  # before_action :logged_in_user, only: [:new, :create, :destroy]
+  before_action :logged_in_user ,only: [:new, :create, :destroy]
+  before_action :correct_user, only: [:edit]
+  # before_action :user_signed_in?, only: [:new, :create, :destroy]
+  # before_action :correct_user,   only: [:edit, :update]
 
   def index
-    @folders = Folder.all
+    @folders = Folder.all.order(created_at: :desc)
   end
 
   def new

@@ -10,7 +10,7 @@
       <div class="float-right">
         <%= link_to "",folder_path(folder),class: "fas fa-gamepad fa-border fa-2x" %>
         <%= link_to "",folder_posts_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>        
-        <% if user_signed_in? %>
+        <% if folder.user == current_user %>
           <%= link_to "",new_folder_post_path(folder),class: "fas fa-plus fa-border fa-2x" %>
           <%= link_to "", folder_path(folder), method: :delete,class:"fas fa-trash-alt fa-border fa-2x"  %>   
         <% end %>
