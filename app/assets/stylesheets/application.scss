@@ -1,0 +1,189 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap";
+
+
+// 共通レイアウト
+
+ body {
+  background-color:#DDFFFF;
+}
+
+.container{
+  margin: 40px auto; 
+}
+
+//header
+
+header{
+  text-align: center;
+  height: 80px;
+  background-color: rgb(239, 255, 253);
+}
+
+.header-left{
+  margin-left: 28px;
+}
+
+.header-right{
+  margin-right: 28px;
+}
+
+.header-logo{
+  font-family:'Impact';
+  // text-align: center;
+  padding-top:10px;
+  font-size:45px;
+  display: inline-block;
+}
+
+a{
+  color:#000000;
+  display:inline-block;
+}
+
+a:hover {
+text-decoration: none;
+}
+
+
+li{
+  list-style:none;
+}
+
+.submit-btn{
+  margin-left:10px;
+}
+
+.game-btn{
+  margin-top:30px;
+  padding:10px 80px;
+}
+
+.card-title{
+  font-size:27px;
+  font-family:'sans-serif';
+}
+
+.form-control{
+  display:block;
+}
+
+
+.fas,.far{
+  // color:	#005FFF;
+  color:	#005FFF;
+}
+
+
+
+// new
+
+.jumbotron{
+  background-color:white;
+}
+
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {          
+  border: none;     
+  color: #696969;  
+  // background-color:#DDFFFF;
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background:skyblue;     
+  border-radius: 15px;   
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 15px;   
+}
+
+//dropdownのデザイン
+
+.dropdwn{
+    // max-width: 1200px;
+    display: flex;
+    display:inline-block
+}
+
+.dropdwn-folder{
+    // max-width: 1200px;
+    display: flex;
+    display: inline-block;
+}
+
+ul{
+    text-align: center;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    color: #fff;
+}
+li{
+    // max-width: calc(1200px/5);
+    position: relative;
+    // display: block;
+    cursor: pointer;
+    z-index: 10;    
+}
+
+.dropdwn>li{
+    // width: 120px;
+    margin: 1px;
+    // background: #7ba5ff;
+    display: inline-block;
+}
+
+.dropdwn-folder>li{
+    // width: 120px;
+    margin: 1px;
+    // background: #7ba5ff;
+    display: inline-block;
+}
+
+.dropdwn_menu{
+    width: 120px;
+    display: none;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 5px;
+    padding: 0;
+    background: white;
+}
+
+.dropdwn_menu li{
+    width: 120px;
+    background:white;
+    z-index: 10;         
+}
+
+.dropdwn_menu li a{
+    padding: 5px 0;
+    margin: -5px 5px -5px -5px;
+    display: block;
+    // color: #fff;
+    z-index: 10;         
+}
+
+li a:hover{
+    // background: #b3d7ff;
+    // color: rgb(65, 65, 65);
+}

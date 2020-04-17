@@ -1,0 +1,46 @@
+<script>
+  $(function(){
+      $('.dropdwn li').hover(function(){
+          $("ul:not(:animated)", this).slideDown();
+      }, function(){
+          $("ul.dropdwn_menu",this).slideUp();
+      });
+  });
+</script>
+
+<header class="sticky-top">
+  <% if user_signed_in? %>
+    <div class="header-logo"><%= link_to "トピつく。", folders_path %></div>
+  <% else %>
+    <div class="header-logo"><%= link_to "トピつく。", root_path %></div>
+  <% end %>
+  <div class="float-right header-right mt-1">
+     <ul class="dropdwn">
+      <li ><span class="far fa-caret-square-down fa-border fa-3x"></span>
+          <ul class="dropdwn_menu">
+            <li><%= link_to "フォルダリスト", folders_path %></li>           
+            <% if user_signed_in? %>
+              <li><%= link_to "フォルダ作成", new_folder_path %></li> 
+            <% end %>
+          </ul>
+      </li>    
+    </ul>       
+  </div>      
+  <div class="float-left header-left mt-1">
+    <ul class="dropdwn">
+      <li><span class="fas fa-user fa-border fa-3x"></span>
+        <ul class="dropdwn_menu">
+          <% if user_signed_in? %>
+            <li><%= link_to "プロフィール",user_path(current_user) %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>  
+          <% else %>
+            <li><%= link_to "アカウント作成", new_user_registration_path %></li> 
+            <li><%= link_to "ログイン", new_user_session_path %></li> 
+          <% end %>          
+        </ul>
+      </li>  
+    </ul>          
+  </div>    
+</header>
+
+     

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RandomTalking</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  </head>
+
+  <body>
+
+    <% unless current_page?(root_path) %>
+      <%= render 'layouts/header'%>
+    <% end %>    
+    <% if notice %>
+        <div class="alert alert-info alert-dismissible" role="alert">
+          <%= notice %>
+        </div>
+    <% end %>
+    <% if alert %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <%= alert %>
+    </div>
+    <% end %>    
+    <% unless current_page?(root_path) %>
+      <div class="container">
+        <%= yield %>
+      </div>       
+    <% else %>
+      <%= yield %>
+    <% end %>
+    <%= debug(params) if Rails.env.development? %>
+  </body>
+</html>

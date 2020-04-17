@@ -1,0 +1,63 @@
+// top
+
+* {
+  box-sizing: border-box;
+}
+
+.top-page{
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+.btn-top {
+  opacity: 0.85;
+}
+
+.btn-top:hover {
+  opacity: 1;
+}
+
+// top
+.top-wrapper {
+  color:white;
+  background-image: url(/top_page.jpg);
+  background-size: cover;
+  padding:50px 15px;
+}
+
+.how-to-wrapper{
+  display:inline-block;
+  background-color: #f7f7f7;
+  padding:40px 10%;
+  background-size: cover;
+  // margin:0 5%;
+}
+
+.logo{
+  font-size:80px;
+}
+
+//how to
+.how-to{
+  float:left;
+  width:33.3%;
+}
+
+.how-to-icon{
+  width:300px;
+  height:250px;
+}
+
+.text-contents {
+  width: 80%;
+  display: inline-block;
+  font-size: 13px;
+  color: #534c55;
+}
+
+// guidance-wrapper
+
+.guidance-wrapper{
+  background-color:white;
+  padding:0 15px;
+}
+

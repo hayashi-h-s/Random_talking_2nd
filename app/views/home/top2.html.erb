@@ -1,0 +1,70 @@
+
+
+
+<div class="top-page">
+  <div class="top-wrapper text-center">
+    <h1 class="logo">ランとぴ。</h1>
+    <p>ランダムに表示されるトピック(話題)を自分で投稿できるアプリです。</p>
+    <p>男女で盛り上がる話題、罰ゲーム、深い話などテーマに合ったトピックを作ってみんなで、遊んでみよう！</p>
+    <div class="btn-wrapper">
+      <%#= link_to "遊び方",root_path,class:"btn btn-success w-25" %>
+      <p></p>
+      <%= link_to "さっそく遊ぶ",folders_path,class:"btn btn-info w-25" %>
+    　<p></p>
+      <%= link_to "アカウント登録",root_path,class:"btn btn-primary w-25" %>
+      <p></p>
+      <%= link_to "ログイン",root_path,class:"btn btn-warning w-25" %>
+    </div>
+  </div>
+  <div class="how-to-wrapper text-center">
+    <div>
+      <div class="heading mt-5">
+        <h2>遊び方</h2>
+      </div>
+      <div class="container">
+        <div class="how-to">
+          <p>STEP1</p>
+          <div class="how-to-icon mb-3">
+            <img src="https://prog-8.com/images/html/advanced/html.png">            
+          </div>
+          <p>フォルダを作る</p>
+          <p class="text-contents">異性にしたい質問集、罰ゲーム、深い話など、テーマに沿ったフォルダ名を投稿しよう！</p>
+        </div>
+        <div class="how-to">
+          <p>STEP2</p>
+          <div class="how-to-icon mb-3">
+            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
+          </div>
+          <p>自分でトピックの投稿</p>
+          <p class="text-contents">フォルダのテーマに合った内容のトピックを投稿しよう！ググるといいトピックが見つかるのでおすすめ。</p>
+        </div>
+        <div class="how-to">
+          <p>STEP3</p>
+          <div class="how-to-icon mb-3">
+            <img src="https://prog-8.com/images/html/advanced/ruby.png">
+          </div>
+          <p>みんなでトピックの投稿</p>
+          <p class="text-contents">内容は匿名で追加されるので、誰がどんなトピックを追加したかわからないドキドキ感を味わうことができます。</p>
+        </div>
+        <div class="how-to">
+          <p>STEP4</p>
+          <div class="how-to-icon mb-3">
+            <img src="https://prog-8.com/images/html/advanced/php.png">
+          </div>
+          <p>トピックの実行</p>
+          <p class="text-contents">ゲームなどをして負けた人が、ランダムに表示されたトピックの内容を実行する</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="guidance-wrapper text-center">
+    <div class="heading">
+      <h2></h2>
+      <h3 class="pt-5">さっそく遊んでみよう！</h3>
+    </div>
+    <%= link_to "みんなが作ったフォルダ一覧へ",folders_path,class:"btn btn-primary mt-3 mb-5 "%>
+    <p>アカウントを作ると自分でフォルダを作れます。</p>
+    <%= link_to "アカウント作成へ",new_user_registration_path,class:"btn btn-primary mt-3 mb-5 "%>
+  </div>
+</div>

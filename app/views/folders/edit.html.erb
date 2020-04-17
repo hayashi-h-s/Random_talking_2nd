@@ -1,0 +1,7 @@
+<div class="jumbotron">
+  <h1 class="display-4">フォルダ名の編集</h1>
+    <%= form_with model:@folder,local:true,class: "form-inline" do |f| %>
+      <%= f.text_field :title,placeholder: "フォルダ名を入力",class: "form-control w-75", autofocus: true %>
+      <%= f.submit "投稿",class: "btn btn-primary submit-btn" %>
+    <% end %>
+</div>

@@ -1,0 +1,22 @@
+<% if @post.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="jumbotron">
+  <h2 class="folder-title" ></h2>
+  <h1 class="display-4 ">「<%= @folder.title %>」にトピックを投稿</h1>
+  <p  class="lead">ランダムに表示したいトピックを投稿する。</p>
+    <%= form_with model:[@folder, @folder.posts.build],local:true,class: "form-inline" do |f| %>
+      <%= f.text_field:content,placeholder: "トピックを入力",class: "form-control w-75", autofocus: true %>
+      <%= f.submit "投稿",class: "btn btn-primary submit-btn" %>
+    <% end %>
+    <div class="text-center">
+    <%= link_to "ゲーム開始","/game/#{@folder.id}", class:"btn btn-info btn-lg game-btn" %>
+    </div>
+</div>

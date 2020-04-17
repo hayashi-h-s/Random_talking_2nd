@@ -1,0 +1,62 @@
+<div class="top-page">
+  <div class="top-wrapper text-center">
+    <h1 class="logo">トピつく。</h1>
+    <p>ランダムに表示されるトピック(話題)を自分で投稿できるアプリです。</p>
+    <p>男女で盛り上がる話題、罰ゲーム、深い話などテーマに合ったトピックを作ってみんなで遊んでみよう！</p>
+    <div class="btn-wrapper">
+      <%#= link_to "遊び方",root_path,class:"btn btn-success w-25 btn-top" %>
+      <p></p>
+      <%#= link_to "さっそく遊ぶ",folders_path,class:"btn btn-info mt-3 btn-top col-md-4" %>
+    　<p></p>
+      <%= link_to "アカウント登録",new_user_registration_path,class:"btn btn-primary col-md-4 mt-2 btn-top" %>
+      <p></p>
+      <%= link_to "ログイン",new_user_session_path,class:"btn btn-success col-md-4 mt-2 btn-top " %>   
+      <p>
+      <%= link_to "みんなのフォルダ一覧へ",folders_path,class:"btn btn-info mt-4 btn-top col-md-4 " %>       
+    </div>
+  </div>
+  <div class="how-to-wrapper text-center">
+    <div>
+      <div class="heading mt-4">
+        <h2>遊び方</h2>
+      </div>
+      <div class="container-fluid">
+        <div class="how-to">
+          <p>STEP1</p>
+          <div class="mb-3">
+            <img src="how_to1.jpg" class="how-to-icon">            
+          </div>
+          <p>フォルダを作る</p>
+          <p class="text-contents">合コンで盛り上がる話題、罰ゲーム、深い話など、テーマに沿ったフォルダ名を投稿しよう！</p>
+        </div>
+        <div class="how-to">
+          <p>STEP2</p>
+          <div class="mb-3">
+            <img src="how_to2.jpg" class="how-to-icon">
+          </div>
+          <p>トピックの投稿</p>
+          <p class="text-contents">フォルダのテーマに合った内容のトピックを投稿しよう！ググるといいトピックが見つかるのでおすすめ。</p>
+        </div>
+        <div class="how-to">
+          <p>STEP3</p>
+          <div class="mb-3">
+            <img src="how_to3.jpg" class="how-to-icon">
+          </div>
+          <p>ゲームをプレイ</p>
+          <p class="text-contents">「次のトピックへ」を押すと投稿したトピックからランダムで１つ表示します。ゲームなどをして負けた人が、ランダムに表示されたトピックの内容を実行します。</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="guidance-wrapper text-center pt-1">
+    <div class="heading">
+      <h2></h2>
+      <h3 class="pt-5">さっそく遊んでみよう！</h3>
+    </div>
+    <%= link_to "アカウント作成へ",new_user_registration_path,class:"btn btn-primary col-md-4 mt-3 mb-3 btn-top"%>    
+    <p>アカウントを作ると自分でフォルダを作れます。</p>
+    <h3 class="pt-1">ログインせずに遊ぶ</h3>
+    <%= link_to "みんなが作ったフォルダ一覧へ",folders_path,class:"btn btn-primary col-md-4 mt-2 mb-5 btn-top"%>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+// タブレット向けレイアウト
+@media all and (max-width: 1200px) {
+  .how-to {
+    width: 100%;
+  }  
+}
+
+// スマホ向けレイアウト
+@media all and (max-width: 670px) {
+  .header-logo{
+    font-size: 30px!important;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,54 @@
+
+<% 
+=begin
+%>
+
+あとで機能を追加する
+フォルダ名:<%= @folder.title %>
+<%= form_with model:[@folder, @folder.posts.build],local:true,class: "form-inline" do |f| %>
+  <%= f.text_field:content,placeholder: "トピックを入力",class: "form-control w-75" %>
+  <%= f.submit "投稿",class: "btn btn-primary submit-btn" %>
+<% end %>
+
+<%= link_to "ゲーム開始！",folder_path(@folder), class:"btn btn-info btn-lg game-btn" %>
+
+<%
+=end
+%>
+
+<div class="text-center">
+  <div class="user-name-show">
+    <% if @folder.user.avatar? %>
+      <%= image_tag @folder.user.avatar.to_s, class:"icon" %>
+    <% else %>
+      <image src="/assets/default_user_image.jpg" class="icon" %>
+    <% end %>
+    <%= @folder.user.name %> 
+  </div>
+</div>
+
+<div class="text-center">
+  <div class="user-name-show"><%#= @user.name %> </div>
+  <%#= link_to "", edit_user_registration_path(@user),class:"fas fa-user-edit fa-border fa-2x mb-3" %>
+  <p class="lead mt-3">「<%= @folder.title %>」のトピック一覧</p>
+</div>
+
+<% if @posts.blank? %>
+  <div class="card mx-auto" style="width: 90%;">
+    <div class="card-body text-center">
+      トピックが投稿されていません。
+    </div>
+  </div>
+<% else %>
+  <% @posts.each do |post| %>
+    <div class="card mx-auto" style="width: 90%;">
+      <div class="card-body">
+        <span class="card-title"><%= post.content %></span>
+        <div class="float-right">
+          <%#= link_to "編集",edit_folder_post_path(post),class: "btn btn-primary" %> 
+          <%= link_to "削除",folder_post_path(@folder,post), method: :delete,class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,65 @@
+
+<div class="jumbotron text-center">
+  <h1 class="display-4">アカウントを編集</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :名前 %>
+    <p>
+    <%= f.text_field :name, autofocus: true,class: "form-label-group form"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :メールアドレス %>
+    <p>
+    <%= f.email_field :email,autocomplete: "email",class: "form-label-group form" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :パスワード（変更しない場合は空白）%>
+    <p>
+    <%= f.password_field :password, autocomplete: "new-password",class: "form-label-group form",placeholder: "#{@minimum_password_length}文字以上で入力してください"  %>
+    <% if @minimum_password_length %>
+      <br />
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :パスワード（確認）%>
+    <p>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-label-group form"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :現在のパスワード（変更するには現在のパスワードが必要） %>
+    <p>
+    <%= f.password_field :current_password, autocomplete: "current-password",class: "form-label-group form"  %>
+  </div>
+
+  <% if @user.avatar? %>
+    <%= link_to (image_tag resource.avatar.to_s, class:"icon block") %>
+  <% else %>
+    <image src="/assets/default_user_image.jpg" class="icon" %>
+  <% end %>
+
+  <div class="field mb-2 mt-3">
+    <label for="js_presentImg" class="btn btn-info form">
+      <span>アイコン画像の変更</span>
+      <%= f.file_field :avatar, id: :js_presentImg, autofocus: true, class:"form-control-file", style: "display:none;" %>
+    </label>
+  </div>
+
+  <div class="actions mt-4">
+    <%= f.submit "変更を保存",class: "btn btn-primary form" %>    
+  </div>
+<% end %>
+
+<p><%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当に削除してよろしいですか？\n(アカウント内のデータは全て消えてしまいます。)" }, method: :delete,class: "btn btn-danger submit-btns"  %></p>
+</div>
+

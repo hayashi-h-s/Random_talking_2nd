@@ -1,0 +1,43 @@
+<% if @user == current_user %>
+  <%= link_to "", edit_user_registration_path(@user),class:"fas fa-user-edit fa-border fa-2x mb-3 user-edit" %>
+<% end %>
+<div class="text-center">
+  <div class="user-name-show">
+    <% if @user.avatar? %>
+      <%= image_tag @user.avatar.to_s, class:"icon" %>
+    <% else %>
+      <image src="/assets/default_user_image.jpg" class="icon" %>
+    <% end %>
+    <%= @user.name %> 
+  </div>
+  <p class="lead mt-3">Myフォルダ一覧</p>
+</div>
+
+<% if @folders.blank? %>
+    <div class="card mx-auto" style="width: 90%;">
+      <div class="card-body text-center">
+        フォルダが投稿されていません。
+      </div>
+    </div>
+<% else %>
+  <% @folders.each do |folder| %>
+    <div class="card mx-auto" style="width: 90%;">
+      <div class="card-body">
+        <span class="user-name"><%= folder.user.name %></span>
+        <p>
+        <span class="card-title"><%= folder.title %></span>
+        <span class="float-right">
+          <%= link_to "","/game/#{folder.id}",class: "fas fa-gamepad fa-border fa-2x" %>
+          <%= link_to "",folder_posts_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>
+          <%= link_to "",edit_folder_path(folder),class: "fas fa-edit fa-border fa-2x" %>
+          <%= link_to "",new_folder_post_path(folder),class: "fas fa-plus fa-border fa-2x" %>
+          <%= link_to "",folder_path(folder), method: :delete,class:"fas fa-trash-alt fa-border fa-2x", data: { confirm: "本当に削除してよろしいですか？\n(フォルダは復元できません。)" } %>
+          <%#= link_to "",user_folder_path(folder),class: "fas fa-gamepad fa-border fa-2x" %>
+          <%#= link_to "",new_user_folder_post_path(folder),class: "fas fa-folder-open fa-border fa-2x" %>      
+        </span>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%= paginate @folders %>

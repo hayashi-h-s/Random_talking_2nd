@@ -1,0 +1,59 @@
+
+
+
+<script>
+    'use strict';
+    const num = 16;
+    const winner = Math.floor(Math.random() * num); // 0 - 4
+
+    for (let i = 0; i < num; i++) {
+      const div = document.createElement('div');
+      // 定数 "div"にdivダグを代入して使用できるようにしている。divタグをを表示している
+      div.classList.add('box');
+      // divタグにclass="box"を追加している
+      div.addEventListener('click', () => {
+        if (i === winner) {
+          div.textContent = 'アウト';
+          div.classList.add('win');
+        } else {
+          div.textContent = 'セーフ!';
+          div.classList.add('lose');
+        }
+      });
+      document.body.appendChild(div);
+    }
+</script>
+
+<div class="game-page">
+  <div class="mx-auto w-90 topick-box">
+    <div class="card-body topick-box">
+      <% @random.each do |post| %>
+        <h1 class="topick "><%= post.content %></h1>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+  <div class="text-center">
+    <%= link_to "次のトピックへ",folder_path,class:"btn btn-info w-90 next" %>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.0.0/velocity.min.js"></script>
+<script type="text/javascript">
+(function($) {
+    $(function () {
+        $('.sub-menu > a').on('click', function (e) {
+            e.preventDefault();
+            var $subNav = $(this).next('.sub-menu-nav');
+            if ($subNav.css("display") === "none") {
+                $(this).addClass('is-active');
+                $subNav.velocity('slideDown', {duration: 400});
+            } else {
+                $(this).removeClass('is-active');
+                $subNav.velocity('slideUp', {duration: 400});
+            }
+        });
+    });
+})(jQuery);
+</script>

@@ -1,0 +1,108 @@
+// // 文字の大きさ
+// https://teratail.com/questions/49808
+// 高さ
+// https://www.granfairs.com/blog/staff/centering-by-css
+// .outer{
+//   display: table;
+//   width: 100%;
+// border:1px solid black;font-size:16px;margin:5px 2px;width:70%;
+// height: 300px;
+// text-align: center;
+// }
+
+// .inner{
+//   display: table-cell;
+//   vertical-align: middle;
+// }
+
+.topick{
+  display: table-cell;
+  vertical-align: middle;  
+  font-size:11vmin;
+  font-family:'Century Gothic';
+  // color: red;
+}
+
+.topick-box{
+  // display: table;  
+  // text-align: center;
+  // background-color: red;
+  // color: red;
+  border-radius: 10px;
+  background-color: white;
+  display: table;
+  // position: relative;
+  height: 68%;
+  text-align: center;
+}
+
+.game-logo{
+  // display: table-cell;
+  // vertical-align: middle;  
+  display: table-cell;
+  vertical-align: middle;  
+  font-size:11vmin;
+  font-family:'Impact';
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  // margin: auto;
+  // // width: 80%;
+  // height: 3.2rem;  
+ }
+ 
+//  .next{
+//   position :fixed;
+//   bottom: 100px;
+//   left: 5% ;
+//   z-index: 10;
+//  }
+
+// index
+
+.user-name{
+  font-family:'Microsoft Sans Serif';
+  font-size:20px;
+}
+.user-name a{ 
+  color:rgb(89, 84, 84);  
+  }  
+
+.folder-title{
+  font-family:'MV Boil';
+  font-size:37px;
+}
+
+.w-90{
+  width:90%;
+}
+
+.game-page{
+  height: 100vh;
+}
+
+.folder-show{
+  height: 100vh;
+}
+
+.h-60{
+  
+}
+
+// .card{
+//   height: 200px;
+// }
+
+// .next{
+// 	position: absolute;
+// 	bottom: 90px;
+//   // width:auto;
+//   left:50%;
+//     transform: translateX(-50%);
+//     -webkit-transform: translateX(-50%);
+//     -ms-transform: translateX(-50%);
+// }
+
+
